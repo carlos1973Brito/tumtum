@@ -1,0 +1,45 @@
+<zk>
+	
+<window id="win"  width="1024px" title="Tumtum" border="normal" >
+	
+	<groupbox>
+ <caption label="Alumnos Calificaciones" width="580px" />
+ <grid>
+  <columns sizable="true">
+   <column width="100px"/>
+   <column width="370px"/>
+  </columns>
+  <rows>
+   <row>
+    <label value="Nombre:"/>
+    <textbox id="nombre" value="@{win$composer.current.nombre}" width="350px"/>
+   </row>
+   <row>
+    <label value="Calificacion:"/>
+    <textbox id="calificacion" value="@{win$composer.current.apellido1}" width="350px"/>
+   </row>
+   <row>
+    <label value="Materia"/>
+    <textbox id="materia" value="@{win$composer.current.apellido2}" width="350px"/>
+   </row>      
+  </rows>
+ </grid>
+
+ <button id="search" label="Buscar" /> 
+</groupbox>
+<listbox id="box" multiple="true" selectedItem="@{win$composer.current}" emptyMessage="No hay personas a mostrar">
+ <listhead>
+  <listheader label="Nombre:"/>
+  <listheader label="Calificacion"/>
+  <listheader label="Materia"/>
+ </listhead>
+ <template name="model">
+ <listitem width="680px">
+  <listcell label="${each.nombre}" />
+  <listcell label="${each.calificacion}" />
+  <listcell label="${each.materia}" />    
+ </listitem>
+  </template> 
+</listbox>
+</window>
+</zk>
