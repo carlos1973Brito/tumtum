@@ -1,10 +1,9 @@
 <zk>
 	
-<window id="win"  width="1024px" title="Tumtum" border="normal" >
-	
+<window id="win" apply="com.tumtum.controller.SearchController"  width="1024px" title="Tumtum" border="normal" style="text-align:center;" >
 	<groupbox>
- <caption label="Alumnos Calificaciones" width="580px" />
- <grid>
+ <caption label="Calificaciones" width="580px"/>
+ <grid style="text-align:center;">
   <columns sizable="true">
    <column width="100px"/>
    <column width="370px"/>
@@ -25,21 +24,14 @@
   </rows>
  </grid>
 
- <button id="search" label="Buscar" /> 
+ <button id="search" label="Buscar" onClick="" /> 
 </groupbox>
-<listbox id="box" multiple="true" selectedItem="@{win$composer.current}" emptyMessage="No hay personas a mostrar">
+<listbox id="lbCalificaciones" multiple="true" selectedItem="@{win$composer.current}" emptyMessage="No hay personas a mostrar">
  <listhead>
-  <listheader label="Nombre:"/>
-  <listheader label="Calificacion"/>
-  <listheader label="Materia"/>
+  <listheader label="nombre"/>
+  <listheader label="calificacion"/>
+  <listheader label="materia"/>
  </listhead>
- <template name="model">
- <listitem width="680px">
-  <listcell label="${each.nombre}" />
-  <listcell label="${each.calificacion}" />
-  <listcell label="${each.materia}" />    
- </listitem>
-  </template> 
 </listbox>
 </window>
 </zk>
